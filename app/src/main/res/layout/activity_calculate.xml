@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculate">
+
+    <Spinner
+        android:id="@+id/Appetizer2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="80dp">
+
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/Appertizer1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="40dp">
+
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/MainCourse1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="155dp">
+
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/MainCourse2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="195dp">
+
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/MainCourse3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="235dp">
+
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/Desert1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="310dp">
+
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/Desert2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="350dp">
+
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:text="Appetizer"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="125dp"
+        android:text="Main Course"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="280dp"
+        android:text="Desert"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/Calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="39dp"
+        android:text="Calculate "
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
+
+    <EditText
+        android:id="@+id/Appetizer1Quantity"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/Appetizer2Quantity"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/MainCourse1Quantity"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/MainCourse2Quantity"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="189dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/MainCourse3Quantity"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/Desert1Quantity"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/Desert2Quantity"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="12dp" />
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Calculating Calories Intake</string>
+    <string-array name="appetizer_food">
+        <item>None</item>
+        <item>Chicken Soup</item>
+        <item>Pork Soup</item>
+        <item>Mushroom Soup</item>
+    </string-array>
+
+
+
+
+    <string-array name="food_to_choose">
+        <item>Appetizer</item>
+        <item>Main Course</item>
+        <item>Desert</item>
+
+    </string-array>
+</resources>
