@@ -7,9 +7,6 @@
         <item>Mushroom Soup</item>
     </string-array>
 
-
-
-
     <string-array name="food_to_choose">
         <item>Appetizer</item>
         <item>Main Course</item>

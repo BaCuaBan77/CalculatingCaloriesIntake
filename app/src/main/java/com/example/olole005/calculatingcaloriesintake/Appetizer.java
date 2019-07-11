@@ -1,16 +1,25 @@
 package com.example.olole005.calculatingcaloriesintake;
 
-public class Appetizer
-{
-    public String Name;
-    public double Protein;
-    public double Carbo;
-    public double Fat;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
-    public Appetizer(String name, double protein, double carbo, double fat)
-    {   Name =name;
-        Protein=protein;
-        Carbo=carbo;
-        Fat=fat;
-    }
+@Entity
+public class Appetizer {
+    @PrimaryKey
+    public int mId;
+
+    @ColumnInfo(name = "Name")
+    public String mName;
+
+    @ColumnInfo(name = "Protein")
+    public float mProtein;
+
+    @ColumnInfo(name = "Carbo")
+    public float mCarbo;
+
+    @ColumnInfo(name = "Fat")
+    public float mFat;
+
+
 }

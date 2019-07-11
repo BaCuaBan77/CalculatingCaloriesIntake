@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class ShowResult extends AppCompatActivity  {
-public TextView proteinResult;
+    public TextView proteinResult;
     public TextView carboResult;
     public TextView fatResult;
     @Override
@@ -17,20 +17,6 @@ public TextView proteinResult;
         setContentView(R.layout.activity_show_result);
         proteinResult = findViewById(R.id.protein);
         carboResult =findViewById(R.id.carbo);
-
         fatResult = findViewById(R.id.fat);
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
