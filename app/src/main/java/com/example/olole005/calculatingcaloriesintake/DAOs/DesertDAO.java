@@ -1,4 +1,4 @@
-package com.example.olole005.calculatingcaloriesintake;
+package com.example.olole005.calculatingcaloriesintake.DAOs;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
@@ -6,6 +6,7 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
+import com.example.olole005.calculatingcaloriesintake.Enities.Desert;
 import java.util.List;
 
 @Dao

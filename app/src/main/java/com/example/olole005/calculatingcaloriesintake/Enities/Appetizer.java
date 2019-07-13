@@ -1,4 +1,4 @@
-package com.example.olole005.calculatingcaloriesintake;
+package com.example.olole005.calculatingcaloriesintake.Enities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -6,8 +6,8 @@ import android.arch.persistence.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity(tableName = "desert")
-public class Desert implements Serializable {
+@Entity (tableName = "appetizer")
+public class Appetizer implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int mId;
 

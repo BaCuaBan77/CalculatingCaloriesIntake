@@ -6,6 +6,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.olole005.calculatingcaloriesintake.Repositories.AppetizerRepository;
+import com.example.olole005.calculatingcaloriesintake.Repositories.DesertRepository;
+import com.example.olole005.calculatingcaloriesintake.Repositories.MainCourseRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 

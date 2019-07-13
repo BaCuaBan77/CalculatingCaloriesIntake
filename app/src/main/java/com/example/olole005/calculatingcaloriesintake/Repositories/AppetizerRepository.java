@@ -1,9 +1,12 @@
-package com.example.olole005.calculatingcaloriesintake;
+package com.example.olole005.calculatingcaloriesintake.Repositories;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
+
+import com.example.olole005.calculatingcaloriesintake.AppDatabase;
+import com.example.olole005.calculatingcaloriesintake.Enities.Appetizer;
 
 import java.util.List;
 

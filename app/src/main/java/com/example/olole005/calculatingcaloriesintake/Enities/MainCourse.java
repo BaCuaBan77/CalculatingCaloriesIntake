@@ -1,4 +1,4 @@
-package com.example.olole005.calculatingcaloriesintake;
+package com.example.olole005.calculatingcaloriesintake.Enities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

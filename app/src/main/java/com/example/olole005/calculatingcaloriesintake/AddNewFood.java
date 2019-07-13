@@ -13,6 +13,10 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.olole005.calculatingcaloriesintake.Repositories.AppetizerRepository;
+import com.example.olole005.calculatingcaloriesintake.Repositories.DesertRepository;
+import com.example.olole005.calculatingcaloriesintake.Repositories.MainCourseRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 
