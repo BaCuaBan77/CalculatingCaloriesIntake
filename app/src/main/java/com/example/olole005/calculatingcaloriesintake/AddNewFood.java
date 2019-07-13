@@ -1,5 +1,7 @@
 package com.example.olole005.calculatingcaloriesintake;
 
+import android.arch.persistence.room.Room;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,12 +18,13 @@ import java.util.List;
 
 public class AddNewFood extends AppCompatActivity {
     ArrayAdapter<CharSequence> chooseTypeOfFoodAdapter;
-    public EditText nameOfTheFood;
-    public EditText proteinIntake;
-    public EditText carboIntake;
-    public EditText fatIntake;
-    public Button add;
-    public Spinner chooseTypeOfFood;
+    private EditText nameOfTheFood;
+    private EditText proteinIntake;
+    private EditText carboIntake;
+    private EditText fatIntake;
+    private Button add;
+    private Spinner chooseTypeOfFood;
+    private int positionSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,31 +40,48 @@ public class AddNewFood extends AppCompatActivity {
         chooseTypeOfFoodAdapter= ArrayAdapter.createFromResource(this, R.array.food_to_choose, android.R.layout.simple_spinner_item);
         chooseTypeOfFoodAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         chooseTypeOfFood.setAdapter(chooseTypeOfFoodAdapter);
-
-
-
         chooseTypeOfFood.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
-
+                    positionSelected = 0;
+                }
+                else if (position == 1) {
+                    positionSelected = 1;
+                }
+                else if (position == 2 ) {
+                    positionSelected = 2;
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
-
-
-
-
-
-
-
-
-
+        add.setOnClickListener(addFood);
     }
+
+
+    View.OnClickListener addFood = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            AppetizerRepository appetizerRepository = new AppetizerRepository(getApplicationContext());
+            MainCourseRepository mainCourseRepository = new MainCourseRepository(getApplicationContext());
+            if (positionSelected == 0) {
+                String name = String.valueOf(nameOfTheFood.getText());
+                float protein = Float.parseFloat(proteinIntake.getText().toString());
+                float carbo = Float.parseFloat(carboIntake.getText().toString());
+                float fat = Float.parseFloat(fatIntake.getText().toString());
+                appetizerRepository.insertAppetizer(name, protein, carbo, fat);
+            }
+            else if (positionSelected == 1) {
+                String name = String.valueOf(nameOfTheFood.getText());
+                float protein = Float.parseFloat(proteinIntake.getText().toString());
+                float carbo = Float.parseFloat(carboIntake.getText().toString());
+                float fat = Float.parseFloat(fatIntake.getText().toString());
+                mainCourseRepository.insertMainCourse(name, protein, carbo, fat);
+            }
+        }
+    };
+
 
 }

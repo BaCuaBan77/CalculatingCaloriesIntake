@@ -184,7 +184,7 @@
         android:textSize="12dp" />
 
     <EditText
-        android:id="@+id/MainCourse1Quantity"
+        android:id="@+id/MainCourseQuantity1"
         android:layout_width="49dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -198,7 +198,7 @@
         android:textSize="12dp" />
 
     <EditText
-        android:id="@+id/MainCourse2Quantity"
+        android:id="@+id/MainCourseQuantity2"
         android:layout_width="49dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -212,7 +212,7 @@
         android:textSize="12dp" />
 
     <EditText
-        android:id="@+id/MainCourse3Quantity"
+        android:id="@+id/MainCourseQuantity3"
         android:layout_width="49dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

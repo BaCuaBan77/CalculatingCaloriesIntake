@@ -6,8 +6,8 @@ import android.arch.persistence.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity (tableName = "appetizer")
-public class Appetizer implements Serializable {
+@Entity(tableName = "maincourse")
+public class MainCourse implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int mId;
 

@@ -1,26 +1,36 @@
 package com.example.olole005.calculatingcaloriesintake;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
+
 import java.util.List;
 
 @Dao
 public interface AppetizerDAO {
+
+    @Insert
+    Long insertAppetizer(Appetizer appetizer);
+
     @Query("SELECT * FROM appetizer")
     List<Appetizer> getAll();
 
-    @Query("SELECT * FROM appetizer WHERE mId IN (:userIds)")
-    List<Appetizer> loadAllByIds(int[] userIds);
+    @Query("SELECT Name FROM appetizer")
+    List<String> getAllName();
 
-    @Query("SELECT * FROM appetizer WHERE Name LIKE :first")
-    Appetizer findByName(String first);
+    @Query("SELECT * FROM appetizer WHERE mId =:appetizerId")
+    LiveData<Appetizer> getTask(int appetizerId);
 
-    @Insert
-    void insertAll(Appetizer... users);
+    @Query("SELECT Name FROM appetizer WHERE mId =:appetizerId")
+    String getName(int appetizerId);
+
+    @Update
+    void updateAppetizer(Appetizer appetizer);
 
     @Delete
-    void delete(Appetizer user);
+    void delete(Appetizer appetizer);
 }
 
