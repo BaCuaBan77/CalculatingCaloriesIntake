@@ -226,7 +226,7 @@
         android:textSize="12dp" />
 
     <EditText
-        android:id="@+id/Desert1Quantity"
+        android:id="@+id/DesertQuantity1"
         android:layout_width="49dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -240,7 +240,7 @@
         android:textSize="12dp" />
 
     <EditText
-        android:id="@+id/Desert2Quantity"
+        android:id="@+id/DesertQuantity2"
         android:layout_width="49dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

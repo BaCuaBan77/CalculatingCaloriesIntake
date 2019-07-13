@@ -66,6 +66,7 @@ public class AddNewFood extends AppCompatActivity {
         public void onClick(View v) {
             AppetizerRepository appetizerRepository = new AppetizerRepository(getApplicationContext());
             MainCourseRepository mainCourseRepository = new MainCourseRepository(getApplicationContext());
+            DesertRepository desertRepository = new DesertRepository(getApplicationContext());
             if (positionSelected == 0) {
                 String name = String.valueOf(nameOfTheFood.getText());
                 float protein = Float.parseFloat(proteinIntake.getText().toString());
@@ -79,6 +80,13 @@ public class AddNewFood extends AppCompatActivity {
                 float carbo = Float.parseFloat(carboIntake.getText().toString());
                 float fat = Float.parseFloat(fatIntake.getText().toString());
                 mainCourseRepository.insertMainCourse(name, protein, carbo, fat);
+            }
+            else if (positionSelected == 2) {
+                String name = String.valueOf(nameOfTheFood.getText());
+                float protein = Float.parseFloat(proteinIntake.getText().toString());
+                float carbo = Float.parseFloat(carboIntake.getText().toString());
+                float fat = Float.parseFloat(fatIntake.getText().toString());
+                desertRepository.insertDesert(name, protein, carbo, fat);
             }
         }
     };

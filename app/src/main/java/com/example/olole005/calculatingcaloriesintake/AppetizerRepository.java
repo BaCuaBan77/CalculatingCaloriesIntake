@@ -8,12 +8,13 @@ import android.os.AsyncTask;
 import java.util.List;
 
 import static com.example.olole005.calculatingcaloriesintake.AppDatabase.MIGRATION_1_2;
+import static com.example.olole005.calculatingcaloriesintake.AppDatabase.MIGRATION_2_3;
 
 public class AppetizerRepository {
     private AppDatabase appDatabase;
     public AppetizerRepository (Context context) {
         String DB_NAME = "db_task";
-        appDatabase = Room.databaseBuilder(context, AppDatabase.class, DB_NAME).allowMainThreadQueries().addMigrations(MIGRATION_1_2).build();
+        appDatabase = Room.databaseBuilder(context, AppDatabase.class, DB_NAME).allowMainThreadQueries().addMigrations(MIGRATION_1_2, MIGRATION_2_3).build();
     }
 
     public void insertAppetizer (String name, float protein, float carbo, float fat) {
