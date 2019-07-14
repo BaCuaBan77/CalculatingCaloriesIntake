@@ -257,7 +257,7 @@ public class Calculate extends AppCompatActivity {
         });
 
         //Get Value of MainCourse3
-        mainCourse1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mainCourse3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 for (int i = 0; i <= MainCourseList.size(); i++) {
@@ -384,8 +384,8 @@ public class Calculate extends AppCompatActivity {
                             + mFatValueDesert2*9) * mDesertQuanity2/100;
                     mTotalCalories = mAppetizerCalories + mMainCourseCalories + mDesertCalories;
                     Log.d("CalculateCalories", "AppetizerCalories: " + mAppetizerCalories
-                            + "MainCourseCalories: "+ mMainCourseCalories + "DesertCalories: "
-                            + mDesertCalories + "TotalCalories: " + mTotalCalories);
+                            + " MainCourseCalories: "+ mMainCourseCalories + " DesertCalories: "
+                            + mDesertCalories + " TotalCalories: " + mTotalCalories);
                 }
             }).start();
         }
