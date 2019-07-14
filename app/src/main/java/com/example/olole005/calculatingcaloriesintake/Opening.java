@@ -59,12 +59,10 @@ public class Opening extends AppCompatActivity {
     public void openAddNewFoodActitity(){
         Intent intent = new Intent(this, AddNewFood.class );
         startActivity(intent);
-
     }
 
     public void openCalculateActivity(){
          Intent intent = new Intent(this, Calculate.class);
          startActivity(intent);
-
     }
 }

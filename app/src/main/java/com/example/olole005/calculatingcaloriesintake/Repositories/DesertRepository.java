@@ -49,8 +49,8 @@ public class DesertRepository {
         }.execute();
     }
 
-    public void deleteTask(final int id) {
-        final LiveData<Desert> task = getDesert(id);
+    public void deleteTask(final String name) {
+        final LiveData<Desert> task = getDesert(name);
         if(task != null) {
             new AsyncTask<Void, Void, Void>() {
                 @Override
@@ -62,15 +62,23 @@ public class DesertRepository {
         }
     }
 
-    public LiveData<Desert> getDesert(int id) {
-        return appDatabase.desertDAO().getTask(id);
+    public LiveData<Desert> getDesert(String name) {
+        return appDatabase.desertDAO().getTask(name);
     }
 
-    public String getDesertName (int id) {
-        return appDatabase.desertDAO().getName(id);
+    public String getDesertName (String name) {
+        return appDatabase.desertDAO().getName(name);
     }
 
     public List<String> getAllName() {
         return appDatabase.desertDAO().getAllName();
     }
+
+    public float getProteinValue(String name) {return appDatabase.desertDAO().getProtein(name);}
+
+    public float getCarboValue(String name) {return appDatabase.desertDAO().getCarbo(name);}
+
+    public float getFatValue(String name) {return appDatabase.desertDAO().getFat(name);}
+
+    public void deleteAll() {appDatabase.desertDAO().deleteAll();}
 }

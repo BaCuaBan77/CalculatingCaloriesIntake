@@ -49,8 +49,8 @@ public class AppetizerRepository {
         }.execute();
     }
 
-    public void deleteTask(final int id) {
-        final LiveData<Appetizer> task = getAppetizer(id);
+    public void deleteTask(final String name) {
+        final LiveData<Appetizer> task = getAppetizer(name);
         if(task != null) {
             new AsyncTask<Void, Void, Void>() {
                 @Override
@@ -62,15 +62,23 @@ public class AppetizerRepository {
         }
     }
 
-    public LiveData<Appetizer> getAppetizer(int id) {
-        return appDatabase.appetizerDAO().getTask(id);
+    public LiveData<Appetizer> getAppetizer(String name) {
+        return appDatabase.appetizerDAO().getTask(name);
     }
 
-    public String getAppetizerName (int id) {
-        return appDatabase.appetizerDAO().getName(id);
+    public String getAppetizerName (String name) {
+        return appDatabase.appetizerDAO().getName(name);
     }
+
+    public float getProteinValue(String name) {return appDatabase.appetizerDAO().getProtein(name);}
+
+    public float getCarboValue(String name) {return appDatabase.appetizerDAO().getCarbo(name);}
+
+    public float getFatValue(String name) {return appDatabase.appetizerDAO().getFat(name);}
 
     public List<String> getAllName() {
         return appDatabase.appetizerDAO().getAllName();
     }
+
+    public void deleteAll() {appDatabase.appetizerDAO().deleteAll();}
 }

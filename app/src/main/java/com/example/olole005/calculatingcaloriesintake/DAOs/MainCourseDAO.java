@@ -21,11 +21,23 @@ public interface MainCourseDAO {
     @Query("SELECT Name FROM mainCourse")
     List<String> getAllName();
 
-    @Query("SELECT * FROM mainCourse WHERE mId =:maincourseId")
-    LiveData<MainCourse> getTask(int maincourseId);
+    @Query("SELECT * FROM maincourse WHERE Name LIKE :name")
+    LiveData<MainCourse> getTask(String name);
 
-    @Query("SELECT Name FROM mainCourse WHERE mId =:maincourseId")
-    String getName(int maincourseId);
+    @Query("SELECT Name FROM maincourse WHERE Name LIKE :name")
+    String getName(String name);
+
+    @Query("SELECT Protein FROM maincourse WHERE Name LIKE :name")
+    float getProtein(String name);
+
+    @Query("SELECT Carbo FROM maincourse WHERE Name LIKE :name")
+    float getCarbo(String name);
+
+    @Query("SELECT Fat FROM maincourse WHERE Name LIKE :name")
+    float getFat(String name);
+
+    @Query("DELETE FROM maincourse")
+    public void deleteAll();
 
     @Update
     void updateMainCourse(MainCourse mainCourse);

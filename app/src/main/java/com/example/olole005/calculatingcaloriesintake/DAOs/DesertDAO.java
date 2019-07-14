@@ -11,6 +11,7 @@ import java.util.List;
 
 @Dao
 public interface DesertDAO {
+
     @Insert
     Long insertDesert(Desert desert);
 
@@ -20,11 +21,23 @@ public interface DesertDAO {
     @Query("SELECT Name FROM desert")
     List<String> getAllName();
 
-    @Query("SELECT * FROM desert WHERE mId =:desertId")
-    LiveData<Desert> getTask(int desertId);
+    @Query("SELECT * FROM desert WHERE Name LIKE :name")
+    LiveData<Desert> getTask(String name);
 
-    @Query("SELECT Name FROM desert WHERE mId =:desertId")
-    String getName(int desertId);
+    @Query("SELECT Name FROM desert WHERE Name LIKE :name")
+    String getName(String name);
+
+    @Query("SELECT Protein FROM desert WHERE Name LIKE :name")
+    float getProtein(String name);
+
+    @Query("SELECT Carbo FROM desert WHERE Name LIKE :name")
+    float getCarbo(String name);
+
+    @Query("SELECT Fat FROM desert WHERE Name LIKE :name")
+    float getFat(String name);
+
+    @Query("DELETE FROM desert")
+    void deleteAll();
 
     @Update
     void updateDesert(Desert desert);

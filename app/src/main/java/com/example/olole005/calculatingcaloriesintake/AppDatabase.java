@@ -33,5 +33,4 @@ public abstract class AppDatabase extends RoomDatabase {
                     " Protein REAL NOT NULL, Carbo REAL NOT NULL, Fat REAL NOT NULL, PRIMARY KEY(mId))");
         }
     };
-
 }

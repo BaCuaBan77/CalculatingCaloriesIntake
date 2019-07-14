@@ -49,8 +49,8 @@ public class MainCourseRepository {
         }.execute();
     }
 
-    public void deleteTask(final int id) {
-        final LiveData<MainCourse> task = getMainCourse(id);
+    public void deleteTask(final String name) {
+        final LiveData<MainCourse> task = getMainCourse(name);
         if(task != null) {
             new AsyncTask<Void, Void, Void>() {
                 @Override
@@ -62,15 +62,23 @@ public class MainCourseRepository {
         }
     }
 
-    public LiveData<MainCourse> getMainCourse(int id) {
-        return appDatabase.mainCourseDAO().getTask(id);
+    public LiveData<MainCourse> getMainCourse(String name) {
+        return appDatabase.mainCourseDAO().getTask(name);
     }
 
-    public String getMainCourseName (int id) {
-        return appDatabase.mainCourseDAO().getName(id);
+    public String getMainCourseName (String name) {
+        return appDatabase.mainCourseDAO().getName(name);
     }
+
+    public float getProteinValue(String name) {return appDatabase.mainCourseDAO().getProtein(name);}
+
+    public float getCarboValue(String name) {return appDatabase.mainCourseDAO().getCarbo(name);}
+
+    public float getFatValue(String name) {return appDatabase.mainCourseDAO().getFat(name);}
 
     public List<String> getAllName() {
         return appDatabase.mainCourseDAO().getAllName();
     }
+
+    public void deleteAll() {appDatabase.mainCourseDAO().deleteAll();}
 }

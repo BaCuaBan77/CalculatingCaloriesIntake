@@ -21,11 +21,23 @@ public interface AppetizerDAO {
     @Query("SELECT Name FROM appetizer")
     List<String> getAllName();
 
-    @Query("SELECT * FROM appetizer WHERE mId =:appetizerId")
-    LiveData<Appetizer> getTask(int appetizerId);
+    @Query("SELECT * FROM appetizer WHERE Name LIKE :name")
+    LiveData<Appetizer> getTask(String name);
 
-    @Query("SELECT Name FROM appetizer WHERE mId =:appetizerId")
-    String getName(int appetizerId);
+    @Query("SELECT Name FROM appetizer WHERE Name LIKE :name")
+    String getName(String name);
+
+    @Query("SELECT Protein FROM appetizer WHERE Name LIKE :name")
+    float getProtein(String name);
+
+    @Query("SELECT Carbo FROM appetizer WHERE Name LIKE :name")
+    float getCarbo(String name);
+
+    @Query("SELECT Fat FROM appetizer WHERE Name LIKE :name")
+    float getFat(String name);
+
+    @Query("DELETE FROM appetizer")
+    public void deleteAll();
 
     @Update
     void updateAppetizer(Appetizer appetizer);
