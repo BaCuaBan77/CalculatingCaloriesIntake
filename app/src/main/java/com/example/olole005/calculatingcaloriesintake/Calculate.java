@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.olole005.calculatingcaloriesintake.Enities.MainCourse;
 import com.example.olole005.calculatingcaloriesintake.Repositories.AppetizerRepository;
@@ -75,6 +76,21 @@ public class Calculate extends AppCompatActivity {
     private float mCarboValueDesert2;
     private float mFatValueDesert2;
     private String mNameDesert2;
+
+    //Quantities
+    private float mAppetizerQuanity1;
+    private float mAppetizerQuanity2;
+    private float mMainCourseQuanity1;
+    private float mMainCourseQuanity2;
+    private float mMainCourseQuanity3;
+    private float mDesertQuanity1;
+    private float mDesertQuanity2;
+
+    //Calories
+    private float mAppetizerCalories;
+    private float mMainCourseCalories;
+    private float mDesertCalories;
+    private float mTotalCalories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -319,7 +335,59 @@ public class Calculate extends AppCompatActivity {
     View.OnClickListener calculateCalories = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            int AppetizerQuantity = appetizerQuantity.getText().toString().trim().length();
+            int Appetizer2Quantity = appetizer2Quantity.getText().toString().trim().length();
+            int MainCourseQuantity1 = mainCourseQuantity1.getText().toString().trim().length();
+            int MainCourseQuantity2 = mainCourseQuantity2.getText().toString().trim().length();
+            int MainCourseQuantity3 = mainCourseQuantity3.getText().toString().trim().length();
+            int DesertQuantity1 = desertQuantity1.getText().toString().trim().length();
+            int DesertQuantity2 = desertQuantity2.getText().toString().trim().length();
+            //Get quantity of food
+            if (AppetizerQuantity != 0) {
+                mAppetizerQuanity1 = Float.valueOf(appetizerQuantity.getText().toString());
+            }
+            if (Appetizer2Quantity !=0 ){
+                mAppetizerQuanity2 = Float.valueOf(appetizer2Quantity.getText().toString());
+            }
+            if (MainCourseQuantity1 !=0 ){
+                mMainCourseQuanity1= Float.valueOf(mainCourseQuantity1.getText().toString());
+            }
+            if (MainCourseQuantity2 !=0 ){
+                mMainCourseQuanity2 = Float.valueOf(mainCourseQuantity2.getText().toString());
+            }
+            if (MainCourseQuantity3 !=0 ){
+                mMainCourseQuanity3 = Float.valueOf(mainCourseQuantity3.getText().toString());
+            }
+            if (DesertQuantity1 !=0 ){
+                mDesertQuanity1 = Float.valueOf(desertQuantity1.getText().toString());
+            }
+            if (DesertQuantity2 !=0 ){
+                mDesertQuanity2 = Float.valueOf(desertQuantity2.getText().toString());
+            }
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    //Calculate Appetizer Calories
+                    mAppetizerCalories = (mProteinValueAppetizer1*4 + mCarboValueAppetizer1*4
+                            + mFatValueAppetizer1*9)* mAppetizerQuanity1/100
+                            + (mProteinValueAppetizer2*4 + mCarboValueAppetizer2
+                            + mFatValueAppetizer2) * mAppetizerQuanity2/100;
+                    mMainCourseCalories = (mProteinValueMainCourse1*4 + mCarboValueMainCourse1*4
+                            + mFatValueMainCourse1*9) * mMainCourseQuanity1/100
+                            + (mProteinValueMainCourse2*4 + mCarboValueMainCourse2*4
+                            + mFatValueMainCourse2*9) * mMainCourseQuanity2/100
+                            + (mProteinValueMainCourse3*4 + mCarboValueMainCourse3*4
+                            + mFatValueMainCourse3*9) * mMainCourseQuanity3/100;
+                    mDesertCalories = (mProteinValueDesert1*4 + mCarboValueDesert1*4
+                            + mFatValueDesert1*9) * mDesertQuanity1/100
+                            + (mProteinValueDesert2*4 + mCarboValueDesert2*4
+                            + mFatValueDesert2*9) * mDesertQuanity2/100;
+                    mTotalCalories = mAppetizerCalories + mMainCourseCalories + mDesertCalories;
+                    Log.d("CalculateCalories", "AppetizerCalories: " + mAppetizerCalories
+                            + "MainCourseCalories: "+ mMainCourseCalories + "DesertCalories: "
+                            + mDesertCalories + "TotalCalories: " + mTotalCalories);
+                }
+            }).start();
         }
     };
 }
